@@ -1,4 +1,6 @@
 from random import choice
+
+from advertisment import ApartmentSell
 from user import User
 from estate import Apartment, House, Store
 from region import Region
@@ -31,3 +33,10 @@ if __name__ == '__main__':
         region=reg1, address='iran-mashhad'
     )
     store1.show_description()
+
+    apartment_sell = ApartmentSell(
+        user=User.objects_list[0], area=80, rooms_count=2, built_year=1393,
+        has_elevator=True, has_parking=True, floor=2, region=reg1, address='iran-mashhad',
+        price_per_meter=10, discountable=True, convertable=False
+    )
+    apartment_sell.show_detail()
