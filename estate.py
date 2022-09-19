@@ -1,8 +1,8 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABC
 from base import BaseClass
 
 
-class EstateAbstract(BaseClass):
+class EstateAbstract(ABC):
     """
     Abstract class for tracking information about the current state of the  simulation.
     """
