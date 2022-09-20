@@ -1,6 +1,6 @@
 from random import choice
 
-from advertisment import ApartmentSell, HouseSell
+from advertisment import ApartmentSell, HouseSell, ApartmentRent, HouseRent
 from user import User
 from estate import Apartment, House, Store
 from region import Region
@@ -49,5 +49,20 @@ if __name__ == '__main__':
     )
     house_sell.show_detail()
 
-    print(apartment_sell.objects_list)
-    print(house_sell.objects_list)
+    apartment_rent = ApartmentRent(
+        user=User.objects_list[0], area=80, rooms_count=2, built_year=1393,
+        has_elevator=True, has_parking=True, floor=2, region=reg1, address='iran-mashhad',
+        discountable=True, convertable=False, initial_price=100, monthly_price=3.5
+    )
+
+    house_rent = HouseRent(
+        has_yard=True, floors_count=1, user=User.objects_list[1], area=400,
+        rooms_count=6, built_year=1370, region=reg1, address='iran-mashhad',
+        convertable=True, initial_price=130, monthly_price=5.5
+    )
+
+    print(ApartmentSell.manager.search(region=reg1))
+    print(ApartmentRent.manager)
+    print(HouseSell.manager)
+    print(HouseRent.manager)
+    print(HouseRent.manager.get(region=reg1))
