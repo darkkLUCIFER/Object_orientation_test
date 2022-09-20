@@ -66,3 +66,4 @@ if __name__ == '__main__':
     print(HouseSell.manager)
     print(HouseRent.manager)
     print(HouseRent.manager.get(region=reg1))
+    print(ApartmentSell.manager.search(price_per_meter__min=9))
